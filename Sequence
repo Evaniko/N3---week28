@@ -1,0 +1,75 @@
+from pygame import * 
+ 
+window  = display.set_mode((700,500)) 
+ 
+background = transform.scale(image.load('background.jpg'), (700,500)) 
+class GameSprite(sprite.Sprite): 
+    def __init__(self, image_player, speed,x, y): 
+        super().__init__() 
+        self.image = transform.scale(image.load(image_player), (100,100)) 
+        self.speed = speed 
+        self.rect = self.image.get_rect() 
+        self.rect.x = x 
+        self.rect.y = y 
+ 
+    def reset(self): 
+        window.blit(self.image,(self.rect.x, self.rect.y)) 
+ 
+class Player(GameSprite): 
+    def  update (self): 
+        keys_pressed = key.get_pressed() 
+        if keys_pressed[K_a] and self.rect.x > 0: 
+            self.rect.x  -= self.speed 
+        elif keys_pressed[K_d] and self.rect.x < 600: 
+            self.rect.x  += self.speed 
+        elif keys_pressed[K_w] and self.rect.x > 0: 
+            self.rect.y  -= self.speed 
+        elif keys_pressed[K_s] and self.rect.x < 400: 
+            self.rect.y  += self.speed 
+class Enemy (GameSprite): 
+    direction = 'right' 
+    def update(self): 
+        if self.direction == 'right': 
+            self.rect.x += self.speed 
+        if self.direction == 'left': 
+            self.rect.x -= self.speed 
+        if self.rect.x > 600: 
+            self.direction = 'left' 
+        if self.rect.x < 400: 
+            self.direction = 'right' 
+ 
+ 
+player = Player(image_player = 'hero.png', speed=5, x=50, y=100) 
+cyborg = Enemy(image_player='cyborg.png', speed= 3, x=450, y=300) 
+treasure = GameSprite('treasure.png', 0, 500,400) 
+ 
+mixer.init() 
+mixer.music.load('jungles.ogg') 
+mixer.music.play() 
+gameover = False 
+ 
+ 
+clock = time.Clock() 
+FPS = 60 
+font.init() 
+font = font.Font(None, 80) 
+win = font.render('you win', True, (rgb)) 
+game = True  
+while game: 
+    for e in event.get(): 
+        if e.type == QUIT: 
+            game = False 
+    if not gameover : 
+        window.blit(background, (0,0)) 
+        player.reset() 
+        player.update() 
+        cyborg.reset() 
+        cyborg.update() 
+        treasure.reset() 
+        if sprite.collide_rect(player, treasure): 
+            gameover = True 
+        elif sprite.collide_rect(player, cyborg): 
+            gameover = True 
+ 
+    display.update() 
+    clock.tick(FPS)
