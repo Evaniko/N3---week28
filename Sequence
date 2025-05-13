@@ -65,7 +65,7 @@ while game:
         player.update() 
         cyborg.reset() 
         cyborg.update() 
-        treasure.reset(//) 
+        treasure.reset() 
         if sprite.collide_rect(player, treasure): 
             gameover = True 
         elif sprite.collide_rect(player, cyborg): 
