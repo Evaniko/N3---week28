@@ -45,7 +45,7 @@ treasure = GameSprite('treasure.png', 0, 500,400)
  
 mixer.init() 
 mixer.music.load('jungles.ogg') 
-mixer.music.play() 
+mixer.music.play(//) 
 gameover = False 
  
  
