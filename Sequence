@@ -5,7 +5,7 @@ window  = display.set_mode((700,500))
 background = transform.scale(image.load('background.jpg'), (700,500)) 
 class GameSprite(sprite.Sprite): 
     def __init__(self, image_player, speed,x, y): 
-        super().__init__() //
+        super().__init__() 
         self.image = transform.scale(image.load(image_player), (100,100)) 
         self.speed = speed 
         self.rect = self.image.get_rect() 
