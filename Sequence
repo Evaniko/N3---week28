@@ -56,7 +56,7 @@ font = font.Font(None, 80)
 win = font.render('you win', True, (rgb)) 
 game = True  
 while game: 
-    for e in event.get(//): 
+    for e in event.get(): 
         if e.type == QUIT: 
             game = False 
     if not gameover : 
