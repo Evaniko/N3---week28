@@ -44,7 +44,7 @@ cyborg = Enemy(image_player='cyborg.png', speed= 3, x=450, y=300)
 treasure = GameSprite('treasure.png', 0, 500,400) 
  
 mixer.init() 
-mixer.music.load('jungles.ogg') //
+mixer.music.load('jungles.ogg') 
 mixer.music.play() 
 gameover = False 
  
