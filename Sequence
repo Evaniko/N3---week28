@@ -71,5 +71,5 @@ while game:
         elif sprite.collide_rect(player, cyborg): 
             gameover = True 
  
-    display.update(//) 
+    display.update() 
     clock.tick(FPS)
