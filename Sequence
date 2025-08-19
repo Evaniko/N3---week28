@@ -49,7 +49,7 @@ mixer.music.play()
 gameover = False 
  
  
-clock = time.Clock() 
+clock = time.Clock(//) 
 FPS = 60 
 font.init() 
 font = font.Font(None, 80) 
