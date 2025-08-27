@@ -13,7 +13,7 @@ class GameSprite(sprite.Sprite):
         self.rect.y = y 
  
     def reset(self): 
-        window.blit(self.image,(self.rect.x, self.rect.y)) 
+        window.blit(self.image,(self.rect.x, self.rect.y)) //
  
 class Player(GameSprite): 
     def  update (self): 
