@@ -1,6 +1,6 @@
 from pygame import * 
  
-window  = display.set_mode((700,500)) //
+window  = display.set_mode((700,500)) 
  
 background = transform.scale(image.load('background.jpg'), (700,500)) 
 class GameSprite(sprite.Sprite): 
