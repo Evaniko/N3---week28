@@ -34,7 +34,7 @@ class Enemy (GameSprite):
         if self.direction == 'left': 
             self.rect.x -= self.speed 
         if self.rect.x > 600: 
-            self.direction = 'left' 
+            self.direction = 'left' //
         if self.rect.x < 400: 
             self.direction = 'right' 
  
