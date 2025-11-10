@@ -39,7 +39,7 @@ class Enemy (GameSprite):
             self.direction = 'right' 
  
  
-player = Player(image_player = 'hero.png', speed=5, x=50, y=100) **
+player = Player(image_player = 'hero.png', speed=5, x=50, y=100) 
 cyborg = Enemy(image_player='cyborg.png', speed= 3, x=450, y=300) 
 treasure = GameSprite('treasure.png', 0, 500,400) 
  
