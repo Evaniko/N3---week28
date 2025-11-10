@@ -12,7 +12,7 @@ class GameSprite(sprite.Sprite):
         self.rect.x = x 
         self.rect.y = y 
  
-    def reset(self): //
+    def reset(self): 
         window.blit(self.image,(self.rect.x, self.rect.y)) 
  
 class Player(GameSprite): 
