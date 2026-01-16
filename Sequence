@@ -25,7 +25,7 @@ class Player(GameSprite):
         elif keys_pressed[K_w] and self.rect.x > 0: 
             self.rect.y  -= self.speed 
         elif keys_pressed[K_s] and self.rect.x < 400: 
-            self.rect.y  += self.speed 
+            self.rect.y  += self.speed //
 class Enemy (GameSprite): 
     direction = 'right' 
     def update(self): 
