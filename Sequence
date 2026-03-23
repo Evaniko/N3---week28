@@ -59,7 +59,7 @@ while game:
     for e in event.get(): 
         if e.type == QUIT: 
             game = False 
-    if not gameover : 
+    if not gameover : ()
         window.blit(background, (0,0)) 
         player.reset() 
         player.update() 
